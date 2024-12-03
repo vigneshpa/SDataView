@@ -1,6 +1,6 @@
 {
   "name": "sdataview",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Simple DataView library, to simplify for IO operations on a ArrayBuffer",
   "type": "module",
   "main": "dist/SDataView.js",
