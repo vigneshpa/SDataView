@@ -1,0 +1,13 @@
+{
+    "name": "@vigneshpa/sdataview",
+    "version": "1.0.0",
+    "license": "MIT",
+    "exports": "./SDataView.ts",
+    "publish": {
+        "include": [
+            "LICENSE",
+            "README.md",
+            "SDataView.ts"
+        ]
+    }
+}
