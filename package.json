@@ -1,0 +1,20 @@
+{
+  "name": "sdataview",
+  "version": "1.0.0",
+  "description": "A Simple DataView library, to simplify for IO operations on a ArrayBuffer",
+  "type": "module",
+  "main": "dist/SDataView.js",
+  "types": "dist/SDataView.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "DataView",
+    "ArrayBuffer"
+  ],
+  "author": "Vignesh P <vignesh-p@outlook.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}
