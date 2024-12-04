@@ -16,7 +16,7 @@ jobs:
               with:
                   node-version: "22.x"
                   registry-url: "https://npm.pkg.github.com"
-                  scope: "vigneshpa"
+                  scope: "@vigneshpa"
             - run: npm ci
             - run: npm install
             - run: npm run build
