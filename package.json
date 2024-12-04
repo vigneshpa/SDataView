@@ -1,20 +1,29 @@
 {
-  "name": "sdataview",
-  "version": "1.0.1",
-  "description": "A Simple DataView library, to simplify for IO operations on a ArrayBuffer",
-  "type": "module",
-  "main": "dist/SDataView.js",
-  "types": "dist/SDataView.d.ts",
-  "scripts": {
-    "build": "tsc"
-  },
-  "keywords": [
-    "DataView",
-    "ArrayBuffer"
-  ],
-  "author": "Vignesh P <vignesh-p@outlook.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "typescript": "^5.7.2"
-  }
+    "name": "sdataview",
+    "version": "1.0.1",
+    "description": "A Simple DataView library, to simplify for IO operations on a ArrayBuffer",
+    "type": "module",
+    "main": "dist/SDataView.js",
+    "types": "dist/SDataView.d.ts",
+    "files": [
+        "dist",
+        "LICENSE",
+        "README.md"
+    ],
+    "scripts": {
+        "build": "tsc"
+    },
+    "keywords": [
+        "DataView",
+        "ArrayBuffer"
+    ],
+    "author": "Vignesh P <vignesh-p@outlook.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "typescript": "^5.7.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/octocat/my-other-repo.git"
+    }
 }
