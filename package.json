@@ -1,6 +1,6 @@
 {
     "name": "sdataview",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A Simple DataView library, to simplify for IO operations on a ArrayBuffer",
     "type": "module",
     "main": "dist/SDataView.js",
@@ -24,6 +24,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/octocat/my-other-repo.git"
+        "url": "https://github.com/vigneshpa/SDataView.git"
     }
 }
