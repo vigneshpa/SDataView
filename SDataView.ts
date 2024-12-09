@@ -123,113 +123,157 @@ export default class SDataView {
         return new SDataView(this.buffer, this.byteOffset + byteOffset, byteLength);
     }
     // I/O: Read a 32-bit floating point number and move the internal I/O Offset
-    readFloat32(): number {
+    readFloat32(): number | null {
+        if (!this.#withinIoBounds(32 / 8))
+            return null;
         const data = this.getFloat32(this.#ioOffset, this.isLittleEndian);
         this.#ioOffset += 32 / 8;
         return data;
     }
     // I/O: Read a 64-bit floating point and move the internal I/O Offset
-    readFloat64(): number {
+    readFloat64(): number | null {
+        if (!this.#withinIoBounds(64 / 8))
+            return null;
         const data = this.getFloat64(this.#ioOffset, this.isLittleEndian);
         this.#ioOffset += 64 / 8;
         return data;
     }
     // I/O: Read a 8-bit integer and move the internal I/O Offset
-    readInt8(): number {
+    readInt8(): number | null {
+        if (!this.#withinIoBounds(8 / 8))
+            return null;
         const data = this.getInt8(this.#ioOffset);
         this.#ioOffset += 8 / 8;
         return data;
     }
     // I/O: Read a 16-bit integer and move the internal I/O Offset
-    readInt16(): number {
+    readInt16(): number | null {
+        if (!this.#withinIoBounds(16 / 8))
+            return null;
         const data = this.getInt16(this.#ioOffset, this.isLittleEndian);
         this.#ioOffset += 16 / 8;
         return data;
     }
     // I/O: Read a 32-bit integer and move the internal I/O Offset
-    readInt32(): number {
+    readInt32(): number | null {
+        if (!this.#withinIoBounds(32 / 8))
+            return null;
         const data = this.getInt32(this.#ioOffset, this.isLittleEndian);
         this.#ioOffset += 32 / 8;
         return data;
     }
     // I/O: Read a 8-bit unsigned integer and move the internal I/O Offset
-    readUint8(): number {
+    readUint8(): number | null {
+        if (!this.#withinIoBounds(8 / 8))
+            return null;
         const data = this.getUint8(this.#ioOffset);
         this.#ioOffset += 8 / 8;
         return data;
     }
     // I/O: Read a 16-bit unsigned integer and move the internal I/O Offset
-    readUint16(): number {
+    readUint16(): number | null {
+        if (!this.#withinIoBounds(16 / 8))
+            return null;
         const data = this.getUint16(this.#ioOffset, this.isLittleEndian);
         this.#ioOffset += 16 / 8;
         return data;
     }
     // I/O: Read a 32-bit unsigned integer and move the internal I/O Offset
-    readUint32(): number {
+    readUint32(): number | null {
+        if (!this.#withinIoBounds(32 / 8))
+            return null;
         const data = this.getUint32(this.#ioOffset, this.isLittleEndian);
         this.#ioOffset += 32 / 8;
         return data;
     }
     // I/O: Write a 32-bit floating point number and move the internal I/O Offset
     writeFloat32(value: number): void {
+        if (!this.#withinIoBounds(32 / 8))
+            throw new Error("SDataView: Cannot write outside the view");
         this.setFloat32(this.#ioOffset, value, this.isLittleEndian);
         this.#ioOffset += 32 / 8;
     }
     // I/O: Write a 64-bit floating point and move the internal I/O Offset
     writeFloat64(value: number): void {
+        if (!this.#withinIoBounds(64 / 8))
+            throw new Error("SDataView: Cannot write outside the view");
         this.setFloat64(this.#ioOffset, value, this.isLittleEndian);
         this.#ioOffset += 64 / 8;
     }
     // I/O: Write a 8-bit integer and move the internal I/O Offset
     writeInt8(value: number): void {
+        if (!this.#withinIoBounds(8 / 8))
+            throw new Error("SDataView: Cannot write outside the view");
         this.setInt8(this.#ioOffset, value);
         this.#ioOffset += 8 / 8;
     }
     // I/O: Write a 16-bit integer and move the internal I/O Offset
     writeInt16(value: number): void {
+        if (!this.#withinIoBounds(16 / 8))
+            throw new Error("SDataView: Cannot write outside the view");
         this.setInt16(this.#ioOffset, value, this.isLittleEndian);
         this.#ioOffset += 16 / 8;
     }
     // I/O: Write a 32-bit integer and move the internal I/O Offset
     writeInt32(value: number): void {
+        if (!this.#withinIoBounds(32 / 8))
+            throw new Error("SDataView: Cannot write outside the view");
         this.setInt32(this.#ioOffset, value, this.isLittleEndian);
         this.#ioOffset += 32 / 8;
     }
     // I/O: Write a 8-bit unsigned integer and move the internal I/O Offset
     writeUint8(value: number): void {
+        if (!this.#withinIoBounds(8 / 8))
+            throw new Error("SDataView: Cannot write outside the view");
         this.setUint8(this.#ioOffset, value);
         this.#ioOffset += 8 / 8;
     }
     // I/O: Write a 16-bit unsigned integer and move the internal I/O Offset
     writeUint16(value: number): void {
+        if (!this.#withinIoBounds(16 / 8))
+            throw new Error("SDataView: Cannot write outside the view");
         this.setUint16(this.#ioOffset, value, this.isLittleEndian);
         this.#ioOffset += 16 / 8;
     }
     // I/O: Write a 32-bit unsigned integer and move the internal I/O Offset
     writeUint32(value: number): void {
+        if (!this.#withinIoBounds(32 / 8))
+            throw new Error("SDataView: Cannot write outside the view");
         this.setUint32(this.#ioOffset, value, this.isLittleEndian);
         this.#ioOffset += 32 / 8;
     }
     // I/O: Read a 64-bit integer and move the internal I/O Offset
-    readBigInt64(): bigint {
+    readBigInt64(): bigint | null {
+        if (!this.#withinIoBounds(64 / 8))
+            return null;
         const data = this.getBigInt64(this.#ioOffset, this.isLittleEndian);
         this.#ioOffset += 64 / 8;
         return data;
     }
     // I/O: Read a 64-bit unsigned integer and move the internal I/O Offset
-    readBigUint64(): bigint {
+    readBigUint64(): bigint | null {
+        if (!this.#withinIoBounds(64 / 8))
+            return null;
         const data = this.getBigUint64(this.#ioOffset, this.isLittleEndian);
         this.#ioOffset += 64 / 8;
         return data;
     }
     // I/O: Write a 64-bit integer and move the internal I/O Offset
     writeBigInt64(value: bigint): void {
+        if (!this.#withinIoBounds(64 / 8))
+            throw new Error("SDataView: Cannot write outside the view");
         this.setBigInt64(this.#ioOffset, value, this.isLittleEndian);
         this.#ioOffset += 64 / 8;
     }
     // I/O: Write a 64-bit unsigned integer and move the internal I/O Offset
     writeBigUint64(value: bigint): void {
+        if (!this.#withinIoBounds(64 / 8))
+            throw new Error("SDataView: Cannot write outside the view");
         this.setBigUint64(this.#ioOffset, value, this.isLittleEndian);
         this.#ioOffset += 64 / 8;
+    }
+
+    #withinIoBounds(elementSize: number): boolean {
+        return !(this.#ioOffset + elementSize > this.byteLength);
     }
 }
