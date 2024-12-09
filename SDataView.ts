@@ -189,56 +189,56 @@ export default class SDataView {
     // I/O: Write a 32-bit floating point number and move the internal I/O Offset
     writeFloat32(value: number): void {
         if (!this.#withinIoBounds(32 / 8))
-            throw new Error("SDataView: Cannot write outside the view");
+            throw new Error("SDataView: Cannot write outside of the view");
         this.setFloat32(this.#ioOffset, value, this.isLittleEndian);
         this.#ioOffset += 32 / 8;
     }
     // I/O: Write a 64-bit floating point and move the internal I/O Offset
     writeFloat64(value: number): void {
         if (!this.#withinIoBounds(64 / 8))
-            throw new Error("SDataView: Cannot write outside the view");
+            throw new Error("SDataView: Cannot write outside of the view");
         this.setFloat64(this.#ioOffset, value, this.isLittleEndian);
         this.#ioOffset += 64 / 8;
     }
     // I/O: Write a 8-bit integer and move the internal I/O Offset
     writeInt8(value: number): void {
         if (!this.#withinIoBounds(8 / 8))
-            throw new Error("SDataView: Cannot write outside the view");
+            throw new Error("SDataView: Cannot write outside of the view");
         this.setInt8(this.#ioOffset, value);
         this.#ioOffset += 8 / 8;
     }
     // I/O: Write a 16-bit integer and move the internal I/O Offset
     writeInt16(value: number): void {
         if (!this.#withinIoBounds(16 / 8))
-            throw new Error("SDataView: Cannot write outside the view");
+            throw new Error("SDataView: Cannot write outside of the view");
         this.setInt16(this.#ioOffset, value, this.isLittleEndian);
         this.#ioOffset += 16 / 8;
     }
     // I/O: Write a 32-bit integer and move the internal I/O Offset
     writeInt32(value: number): void {
         if (!this.#withinIoBounds(32 / 8))
-            throw new Error("SDataView: Cannot write outside the view");
+            throw new Error("SDataView: Cannot write outside of the view");
         this.setInt32(this.#ioOffset, value, this.isLittleEndian);
         this.#ioOffset += 32 / 8;
     }
     // I/O: Write a 8-bit unsigned integer and move the internal I/O Offset
     writeUint8(value: number): void {
         if (!this.#withinIoBounds(8 / 8))
-            throw new Error("SDataView: Cannot write outside the view");
+            throw new Error("SDataView: Cannot write outside of the view");
         this.setUint8(this.#ioOffset, value);
         this.#ioOffset += 8 / 8;
     }
     // I/O: Write a 16-bit unsigned integer and move the internal I/O Offset
     writeUint16(value: number): void {
         if (!this.#withinIoBounds(16 / 8))
-            throw new Error("SDataView: Cannot write outside the view");
+            throw new Error("SDataView: Cannot write outside of the view");
         this.setUint16(this.#ioOffset, value, this.isLittleEndian);
         this.#ioOffset += 16 / 8;
     }
     // I/O: Write a 32-bit unsigned integer and move the internal I/O Offset
     writeUint32(value: number): void {
         if (!this.#withinIoBounds(32 / 8))
-            throw new Error("SDataView: Cannot write outside the view");
+            throw new Error("SDataView: Cannot write outside of the view");
         this.setUint32(this.#ioOffset, value, this.isLittleEndian);
         this.#ioOffset += 32 / 8;
     }
@@ -261,14 +261,14 @@ export default class SDataView {
     // I/O: Write a 64-bit integer and move the internal I/O Offset
     writeBigInt64(value: bigint): void {
         if (!this.#withinIoBounds(64 / 8))
-            throw new Error("SDataView: Cannot write outside the view");
+            throw new Error("SDataView: Cannot write outside of the view");
         this.setBigInt64(this.#ioOffset, value, this.isLittleEndian);
         this.#ioOffset += 64 / 8;
     }
     // I/O: Write a 64-bit unsigned integer and move the internal I/O Offset
     writeBigUint64(value: bigint): void {
         if (!this.#withinIoBounds(64 / 8))
-            throw new Error("SDataView: Cannot write outside the view");
+            throw new Error("SDataView: Cannot write outside of the view");
         this.setBigUint64(this.#ioOffset, value, this.isLittleEndian);
         this.#ioOffset += 64 / 8;
     }
